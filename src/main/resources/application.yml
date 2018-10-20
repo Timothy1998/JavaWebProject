@@ -1,0 +1,7 @@
+server:
+  port : 8082
+  contextPath: /firstSpring
+spring:
+  datasource:
+    password: root
+    url: jdbc:mysql://localhost:3306/childdb?user=root

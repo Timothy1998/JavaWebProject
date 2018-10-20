@@ -1,0 +1,25 @@
+h1{
+    background-color: crimson;
+    color: white;
+    text-align: center;
+}
+
+h2{
+    background-color: yellow;
+    color: crimson;
+    text-align: center;
+}
+
+img.small{
+    display: inline;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:5cm;
+    max-height:5cm;
+}
+
+p{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
