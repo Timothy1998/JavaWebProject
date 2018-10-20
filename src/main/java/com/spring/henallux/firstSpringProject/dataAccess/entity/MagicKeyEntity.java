@@ -7,17 +7,17 @@ import javax.persistence.*;
 public class MagicKeyEntity {
 
     @Id
-    @Column (name="key")
-    private Integer key;
+    @Column (name="idmagickey")
+    private String key;
 
     public MagicKeyEntity() {
     }
 
-    public Integer getKey() {
+    public String getKey() {
         return key;
     }
 
-    public void setKey(Integer key) {
+    public void setKey(String key) {
         this.key = key;
     }
 }

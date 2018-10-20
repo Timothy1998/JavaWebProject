@@ -1,7 +1,7 @@
 package com.spring.henallux.firstSpringProject.controller;
 
-import com.spring.henallux.firstSpringProject.Constant.Constants;
-import com.spring.henallux.firstSpringProject.model.Hobby;
+import com.spring.henallux.firstSpringProject.constant.Constants;
+import com.spring.henallux.firstSpringProject.dataAccess.dao.UserDAO;
 import com.spring.henallux.firstSpringProject.model.User;
 import com.spring.henallux.firstSpringProject.service.HobbiesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 
 @Controller
 @RequestMapping (value="/inscription")
@@ -22,6 +21,7 @@ import java.util.ArrayList;
 public class InscriptionController {
 
     private HobbiesService hobbiesService;
+    private UserDAO userDAO;
 
     @ModelAttribute(Constants.CURRENT_USER)
     public User user(){
@@ -29,8 +29,9 @@ public class InscriptionController {
     }
 
     @Autowired
-    public InscriptionController(HobbiesService hobbiesService) {
+    public InscriptionController(HobbiesService hobbiesService, UserDAO userDAO) {
         this.hobbiesService = hobbiesService;
+        this.userDAO = userDAO;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -45,7 +46,8 @@ public class InscriptionController {
                               @Valid @ModelAttribute(value = Constants.CURRENT_USER) User user,
                               final BindingResult errors){
         if(!errors.hasErrors()) {
-            model.addAttribute("user", new User(user.getName(), user.getAge(), user.getMale(), user.getHobby()));
+            model.addAttribute("user", user);
+            userDAO.save(user);
             return "redirect:/gift";
         } else {
             return "redirect:/inscription";
