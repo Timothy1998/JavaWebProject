@@ -3,25 +3,12 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <meta http-equiv="Content-Type" content="text/html;  charset=UTF-8">
 
-    <link rel="stylesheet" href="<spring:url value='/css/first.css' />" type="text/css">
     <title>${title}</title>
 </head>
 <body>
-    <h1>Bonjour</h1>
-    <h2>Ca va ?</h2>
-    <div>
-        <img class="small" src='<spring:url value="/images/Small-mario.png"/>'/>
-        <img class="small" src='<spring:url value="/images/The_death.png"/>'/>
-        <div>
-            <tiles:insertAttribute name = "main-content" />
-        </div>
-    </div>
-    <footer>
-        <p>
-            Copyright Henallux 2018
-        </p>
-    </footer>
 </body>
 </html>
